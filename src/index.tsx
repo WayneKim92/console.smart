@@ -49,6 +49,8 @@ function smart(...args: any[]) {
   }
 }
 
+console['smart'] = smart;
+
 // https://gist.github.com/samuthekid/6dbfee2ef6029d544a7d873224d53e16
 if (Platform.OS !== 'web') {
   const tab = 2;
@@ -75,8 +77,6 @@ console.log(`
 | (_| (_) | | | \\__ \\ (_) | |  __/  _  \\__ \\ | | | | | (_| | |  | |_
  \\___\\___/|_| |_|___/\\___/|_|\\___| (_) |___/_| |_| |_|\\__,_|_|   \\__|
 `);
-
-console['smart'] = smart;
 
 export const setSeparator = (newSeparator: string) => {
   separator = newSeparator;
