@@ -23,6 +23,8 @@
     "skipLibCheck": true,
     "strict": true,
     "target": "esnext",
-    "verbatimModuleSyntax": true
+    "verbatimModuleSyntax": true,
+    "suppressImplicitAnyIndexErrors": true,
+    "ignoreDeprecations": "5.0"
   }
 }

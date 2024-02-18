@@ -73,7 +73,7 @@ console.log(`
  \\___\\___/|_| |_|___/\\___/|_|\\___| (_) |___/_| |_| |_|\\__,_|_|   \\__|
 `);
 
-console.smart = smart;
+console['smart'] = smart;
 
 export const setSeparator = (newSeparator: string) => {
   separator = newSeparator;
