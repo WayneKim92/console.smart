@@ -1,6 +1,7 @@
 import { Platform } from 'react-native';
 
-export function smart(...args: any[]) {
+let separator = '\n';
+function smart(...args: any[]) {
   let output = '';
   for (const arg of args) {
     switch (typeof arg) {
@@ -16,25 +17,25 @@ export function smart(...args: any[]) {
         } else {
           output += JSON.stringify(arg, null, 2) + ' ';
         }
-        output += '\n';
+        output += separator;
         break;
 
       case 'function':
         let funcStr = arg.toString().replace(/^ +/gm, '\t');
         funcStr = funcStr.replace(/\t+}$/, '}');
-        output += funcStr + '\n';
+        output += funcStr + separator;
         break;
 
       case 'string':
-        output += `"${arg}"\n`;
+        output += `"${arg}"${separator}`;
         break;
 
       case 'symbol':
-        output += arg.toString() + '\n';
+        output += arg.toString() + separator;
         break;
 
       default:
-        output += arg + '\n';
+        output += arg + separator;
         break;
     }
   }
@@ -73,3 +74,7 @@ console.log(`
 `);
 
 console.smart = smart;
+
+export const setSeparator = (newSeparator: string) => {
+  separator = newSeparator;
+};

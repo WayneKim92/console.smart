@@ -72,8 +72,6 @@ export default function App() {
       '/abc/g',
       Symbol()
     );
-
-    console.table([1, '2', 3, 4]);
   }, []);
 
   return (
