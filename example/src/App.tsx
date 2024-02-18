@@ -66,6 +66,7 @@ export default function App() {
       object.sayHello,
       array,
       array2,
+      now,
       array3,
       now
     );
