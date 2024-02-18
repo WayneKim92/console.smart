@@ -2,7 +2,7 @@
   "compilerOptions": {
     "rootDir": ".",
     "paths": {
-      "console.smart": ["./src/index"]
+      "console-smart": ["./src/index"]
     },
     "allowUnreachableCode": false,
     "allowUnusedLabels": false,

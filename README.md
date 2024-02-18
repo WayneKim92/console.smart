@@ -5,7 +5,7 @@ Smartly outputs content to the console.
 ## Installation
 
 ```sh
-npm install console.smart
+npm install console-smart
 ```
 
 ## Config
@@ -26,7 +26,7 @@ export {};
 ## Usage
 
 ```js
-import 'console.smart';
+import 'console-smart';
 
 console.smart('Hello World!');
 ```
