@@ -25,12 +25,12 @@ export function smart(...args: any[]) {
         output += funcStr + '\n';
         break;
 
-      case 'undefined':
-        output += 'undefined\n';
-        break;
-
       case 'string':
         output += `"${arg}"\n`;
+        break;
+
+      case 'symbol':
+        output += arg.toString() + '\n';
         break;
 
       default:

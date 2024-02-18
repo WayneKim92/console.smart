@@ -69,7 +69,8 @@ export default function App() {
       now,
       '2024-02-18T09:52:33.423Z',
       RegExp('abc', 'g'),
-      '/abc/g'
+      '/abc/g',
+      Symbol()
     );
 
     console.table([1, '2', 3, 4]);
