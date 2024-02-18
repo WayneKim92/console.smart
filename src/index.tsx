@@ -28,16 +28,7 @@ export function smart(...args: any[]) {
         break;
 
       case 'string':
-        if (
-          arg === 'true' ||
-          arg === 'false' ||
-          arg === 'undefined' ||
-          arg === 'null'
-        ) {
-          output += `"${arg}"\n`;
-        } else {
-          output += arg + '\n';
-        }
+        output += `"${arg}"\n`;
         break;
 
       default:

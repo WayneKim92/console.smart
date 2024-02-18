@@ -57,7 +57,6 @@ export default function App() {
       'null',
       undefined,
       'undefined',
-      now,
       function () {
         return 'Hello, world!';
       },
@@ -66,9 +65,9 @@ export default function App() {
       object.sayHello,
       array,
       array2,
-      now,
       array3,
-      now
+      now,
+      '2024-02-18T09:52:33.423Z'
     );
   }, []);
 
