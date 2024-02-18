@@ -6,10 +6,14 @@ export function smart(...args: any[]) {
       if (arg === null) {
         output += 'null ';
       } else if (Array.isArray(arg)) {
-        output +=
-          '[ ' +
-          arg.map((item) => JSON.stringify(item, null, 2)).join(', ') +
-          ' ] ';
+        if (Array.isArray(arg[0])) {
+          console.table(arg); // 2차원 배열 이상일 경우 console.table을 사용하여 출력
+        } else {
+          output +=
+            '[ ' +
+            arg.map((item) => JSON.stringify(item, null, 2)).join(', ') +
+            ' ] ';
+        }
       } else {
         output += JSON.stringify(arg, null, 2) + ' ';
       }

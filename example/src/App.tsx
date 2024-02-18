@@ -5,7 +5,7 @@ import { useEffect } from 'react';
 
 export default function App() {
   useEffect(() => {
-    const data = {
+    const object = {
       name: 'John Doe',
       age: 30,
       isMarried: false,
@@ -19,6 +19,29 @@ export default function App() {
       },
     };
 
+    const array = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+    const array2 = [
+      [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
+      [11, 12, 13, 14, 15, 16, 17, 18, 19, 20],
+    ];
+    const array3 = [
+      [
+        [1, 2],
+        [2, 3],
+        [3, 4],
+      ],
+      [
+        [4, 5],
+        [5, 6],
+        [6, 7],
+      ],
+      [
+        [7, 8],
+        [8, 9],
+        [9, 10],
+      ],
+    ];
+
     console.smart(
       'Hello',
       'world',
@@ -26,9 +49,11 @@ export default function App() {
       true,
       null,
       undefined,
-      data,
-      [1, 2, 3],
-      data.sayHello
+      object,
+      object.sayHello,
+      array,
+      array2,
+      array3
     );
   }, []);
 
