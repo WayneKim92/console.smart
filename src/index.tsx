@@ -59,12 +59,8 @@ if (Platform.OS !== 'web') {
         console.table(item, spc + tab, `${pre}[${i}]`);
       });
       console.log(' '.repeat(spc), '],');
-    } else if (typeof data === 'object' && data !== null) {
-      console.log(' '.repeat(spc), pre, '{');
-      Object.entries(data).forEach(([key, value]) => {
-        console.table(value, spc + tab, `${pre}${pre ? '.' : ''}${key}`);
-      });
-      console.log(' '.repeat(spc), '},');
+    } else if (typeof data === 'object') {
+      console.smart(data);
     } else {
       console.log(' '.repeat(spc), pre, data, `(${typeof data})`);
     }
