@@ -1,3 +1,5 @@
+import { Platform } from 'react-native';
+
 export function smart(...args: any[]) {
   let output = '';
   for (const arg of args) {
@@ -39,7 +41,27 @@ export function smart(...args: any[]) {
   console.log(output);
 }
 
-console['smart'] = smart;
+// https://gist.github.com/samuthekid/6dbfee2ef6029d544a7d873224d53e16
+if (Platform.OS !== 'web') {
+  const tab = 2;
+  console.table = (data, spc = 0, pre = '') => {
+    if (Array.isArray(data)) {
+      console.log(' '.repeat(spc), pre, '[');
+      data.forEach((item, i) => {
+        console.table(item, spc + tab, `${pre}[${i}]`);
+      });
+      console.log(' '.repeat(spc), '],');
+    } else if (typeof data === 'object') {
+      console.log(' '.repeat(spc), pre, '{');
+      Object.entries(data).forEach(([key, value]) => {
+        console.table(value, spc + tab, `${pre}${pre ? '.' : ''}${key}`);
+      });
+      console.log(' '.repeat(spc), '},');
+    } else {
+      console.log(' '.repeat(spc), pre, data, `(${typeof data})`);
+    }
+  };
+}
 
 console.log(`
                            _                                     _

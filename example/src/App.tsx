@@ -67,8 +67,12 @@ export default function App() {
       array2,
       array3,
       now,
-      '2024-02-18T09:52:33.423Z'
+      '2024-02-18T09:52:33.423Z',
+      RegExp('abc', 'g'),
+      '/abc/g'
     );
+
+    console.table([1, '2', 3, 4]);
   }, []);
 
   return (
