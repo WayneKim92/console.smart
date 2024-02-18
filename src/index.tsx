@@ -1,6 +1,6 @@
 import { Platform } from 'react-native';
 
-let separator = '\n';
+let separator = ' ';
 function smart(...args: any[]) {
   let output = '';
   for (const arg of args) {
