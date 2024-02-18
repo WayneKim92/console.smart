@@ -1,5 +1,3 @@
-import { Platform } from 'react-native';
-
 let separator = ' ';
 
 function smart(...args: any[]) {
@@ -15,8 +13,6 @@ function smart(...args: any[]) {
             output += arg.toISOString().trim() + ' ';
           } else if (arg instanceof RegExp) {
             output += arg.toString() + ' ';
-          } else if (Array.isArray(arg)) {
-            console.table(arg);
           } else {
             output += JSON.stringify(arg, null, 2) + ' ';
           }
@@ -50,24 +46,6 @@ function smart(...args: any[]) {
 }
 
 console['smart'] = smart;
-
-// https://gist.github.com/samuthekid/6dbfee2ef6029d544a7d873224d53e16
-if (Platform.OS !== 'web') {
-  const tab = 2;
-  console.table = (data, spc = 0, pre = '') => {
-    if (Array.isArray(data)) {
-      console.log(' '.repeat(spc), pre, '[');
-      data.forEach((item, i) => {
-        console.table(item, spc + tab, `${pre}[${i}]`);
-      });
-      console.log(' '.repeat(spc), '],');
-    } else if (typeof data === 'object') {
-      console['smart'](data);
-    } else {
-      console.log(' '.repeat(spc), pre, data, `(${typeof data})`);
-    }
-  };
-}
 
 console.log(`
                            _                                     _
