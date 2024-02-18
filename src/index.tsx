@@ -3,7 +3,7 @@ import { Platform } from 'react-native';
 let separator = ' ';
 
 function smart(...args: any[]) {
-  let output = '';
+  let output = '[console.smart]\n';
 
   try {
     for (const arg of args) {
