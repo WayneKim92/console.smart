@@ -62,7 +62,7 @@ if (Platform.OS !== 'web') {
       });
       console.log(' '.repeat(spc), '],');
     } else if (typeof data === 'object') {
-      console.smart(data);
+      console['smart'](data);
     } else {
       console.log(' '.repeat(spc), pre, data, `(${typeof data})`);
     }

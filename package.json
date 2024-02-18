@@ -1,6 +1,6 @@
 {
   "name": "console-smart",
-  "version": "0.2.5",
+  "version": "0.2.6",
   "description": "Smartly outputs content to the console.",
   "main": "lib/commonjs/index",
   "module": "lib/module/index",
