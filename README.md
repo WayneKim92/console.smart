@@ -8,14 +8,27 @@ Smartly outputs content to the console.
 npm install console.smart
 ```
 
+## Config
+```shell
+# Add the file below to the root of the project.
+// console.d.ts
+declare global {
+  interface Console {
+    smart(...args: any[]): void;
+  }
+}
+
+export {};
+
+```
+
+
 ## Usage
 
 ```js
-import { multiply } from 'console.smart';
+import 'console.smart';
 
-// ...
-
-const result = await multiply(3, 7);
+console.smart('Hello World!');
 ```
 
 ## Contributing
