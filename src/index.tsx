@@ -4,15 +4,15 @@ export function smart(...args: any[]) {
     if (typeof arg === 'object') {
       output += '\n';
       if (arg === null) {
-        output += 'null ';
+        output += 'null\n';
       } else if (arg instanceof Date) {
-        output += arg.toISOString() + ' '; // Date 객체 처리
+        output += arg.toISOString() + '\n'; // Date 객체 처리
       } else if (arg instanceof RegExp) {
-        output += arg.toString() + ' '; // RegExp 객체 처리
+        output += arg.toString() + '\n'; // RegExp 객체 처리
       } else if (Array.isArray(arg)) {
         console.table(arg); // 2차원 배열 이상일 경우 console.table을 사용하여 출력
       } else {
-        output += JSON.stringify(arg, null, 2) + ' ';
+        output += JSON.stringify(arg, null, 2) + '\n';
       }
       output += '\n'; // 객체가 전달되면 한 줄 개행 추가
     } else if (typeof arg === 'function') {
@@ -20,16 +20,16 @@ export function smart(...args: any[]) {
       let funcStr = arg.toString().replace(/^ +/gm, '\t');
       // 마지막 줄의 시작 부분에서 탭 문자를 제거
       funcStr = funcStr.replace(/\t+}$/, '}');
-      output += funcStr + ' ';
+      output += funcStr + '\n\n';
     } else if (typeof arg === 'undefined') {
-      output += 'undefined ';
+      output += 'undefined\n';
     } else if (
       typeof arg === 'string' &&
       (arg === 'true' || arg === 'false' || 'undefined' || 'null')
     ) {
-      output += `"${arg}" `; // 'true' 또는 'false' 문자열 처리
+      output += `"${arg}"\n`; // 'true' 또는 'false' 문자열 처리
     } else {
-      output += arg + ' ';
+      output += arg + '\n';
     }
   }
   console.log(output);

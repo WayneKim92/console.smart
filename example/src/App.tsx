@@ -58,6 +58,9 @@ export default function App() {
       undefined,
       'undefined',
       now,
+      function () {
+        return 'Hello, world!';
+      },
       undefined,
       object,
       object.sayHello,
