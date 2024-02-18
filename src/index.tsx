@@ -2,11 +2,14 @@ export function smart(...args: any[]) {
   let output = '';
   for (const arg of args) {
     if (typeof arg === 'object') {
-      output += '\n'
+      output += '\n';
       if (arg === null) {
         output += 'null ';
       } else if (Array.isArray(arg)) {
-        output += '[ ' + arg.map(item => JSON.stringify(item, null, 2)).join(', ') + ' ] ';
+        output +=
+          '[ ' +
+          arg.map((item) => JSON.stringify(item, null, 2)).join(', ') +
+          ' ] ';
       } else {
         output += JSON.stringify(arg, null, 2) + ' ';
       }

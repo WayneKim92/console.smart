@@ -14,13 +14,22 @@ export default function App() {
         city: 'Seoul',
         country: 'South Korea',
       },
-      sayHello: function() {
+      sayHello: function () {
         return 'Hello, world!';
       },
     };
 
-    console.smart('Hello', 'world', 123, true, null, undefined, data, [1, 2, 3], data.sayHello);
-
+    console.smart(
+      'Hello',
+      'world',
+      123,
+      true,
+      null,
+      undefined,
+      data,
+      [1, 2, 3],
+      data.sayHello
+    );
   }, []);
 
   return (
