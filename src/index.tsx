@@ -23,6 +23,11 @@ export function smart(...args: any[]) {
       output += funcStr + ' ';
     } else if (typeof arg === 'undefined') {
       output += 'undefined ';
+    } else if (
+      typeof arg === 'string' &&
+      (arg === 'true' || arg === 'false' || 'undefined' || 'null')
+    ) {
+      output += `"${arg}" `; // 'true' 또는 'false' 문자열 처리
     } else {
       output += arg + ' ';
     }

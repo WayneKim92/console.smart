@@ -42,18 +42,29 @@ export default function App() {
       ],
     ];
 
+    const now = new Date();
+
     console.smart(
       'Hello',
       'world',
       123,
+      '123',
+      'true',
       true,
+      false,
+      'false',
       null,
+      'null',
+      undefined,
+      'undefined',
+      now,
       undefined,
       object,
       object.sayHello,
       array,
       array2,
-      array3
+      array3,
+      now
     );
   }, []);
 
